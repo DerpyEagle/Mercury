@@ -21,7 +21,7 @@ except IOError:
 def main():
 	command = input("Choose a command: ")
 	if command == "help" or command == "?":
-		print ("See README for valid commands. Ingot is based on DogeAPI and requires a API key to operate. If you do not have a an API key, please sign up for DogeAPI and get one.")
+		print ("See README for valid commands. Mercury is based on DogeAPI and requires a API key to operate. If you do not have a an API key, please sign up for DogeAPI and get one.")
 	elif command == "balance" or command == "bal":
 		balance = urlopen("https://dogeapi.com/wow/?api_key=" + api_key + "&a=get_balance")
 		for balan in balance.readlines():
@@ -53,11 +53,16 @@ def main():
 		for sconfirm in withdraw.readlines():
 			print ("Sent.")
 			print (sconfirm)
-	elif command == "history":
+	elif command == "history" or command == "address_history":
 		addresshistory = input("Search by address: ")
 		history = urlopen("https://dogeapi.com/wow/?api_key=" + api_key + "&a=get_address_received&payment_address=" + addresshistory)
 		for hconfirm in history.readlines():
 			print (hconfirm)
+	elif command == "label_search" or command == "label_history"
+		labelquery = input("Search by label: ")
+		labelhistory = urlopen("https://dogeapi.com/wow/?api_key=" + api_key + "&a=get_address_by_label&address_label=" + labelquery)
+		for lsconfirm in labelhistory.readlines():
+			print (lsconfirm)
 	else:
 		print ("Invalid command. Please try again.")    
 	main()
