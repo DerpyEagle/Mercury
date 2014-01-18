@@ -58,7 +58,7 @@ def main():
 		history = urlopen("https://dogeapi.com/wow/?api_key=" + api_key + "&a=get_address_received&payment_address=" + addresshistory)
 		for hconfirm in history.readlines():
 			print (hconfirm)
-	elif command == "label_search" or command == "label_history"
+	elif command == "label_search" or command == "label_history":
 		labelquery = input("Search by label: ")
 		labelhistory = urlopen("https://dogeapi.com/wow/?api_key=" + api_key + "&a=get_address_by_label&address_label=" + labelquery)
 		for lsconfirm in labelhistory.readlines():
