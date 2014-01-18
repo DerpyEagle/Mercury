@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 
-print ("Launching Ingot prealpha...")
+print ("Launching Mercury prealpha...")
 
 try:
 	conf = open('config.conf', 'r')
